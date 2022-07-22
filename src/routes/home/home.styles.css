@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima&display=swap");
+
+.home-title {
+  text-align: center;
+  font-family: "Arima", cursive;
+  font-size: 5rem;
+  color: aqua;
+}
+
+.search-box {
+  display: block;
+  margin: auto;
+  height: 2rem;
+  background-image: url("./../../assets/search.svg");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+}

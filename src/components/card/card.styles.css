@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: #434bc0b6;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 0px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.movie-title{
+  color: aqua;
+  text-align: center;
+}
+
+.star-logo{
+  margin: 0.5rem 0.5rem;
+  height: 2rem;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.release-date{
+  color: #eeff00;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.rating-container{
+  display: flex;
+  padding-right: 0.3rem;
+}
+
+.notes-container{
+  padding-top: 0.3rem;
+  font-size: smaller;
+  color: aqua;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.bookmark-logo{
+  margin-left: 85% ;
+  position: absolute;
+  height: auto;
+  width: 40px;
+  background-color: red;
+}
