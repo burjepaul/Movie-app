@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { WatchlistContext } from "../../contexts/watchlist.context";
 import {ReactComponent as MainLogo} from './../../assets/logo.svg'
 import "./navigation.styles.css";
 
 export default function Navigation() {
+  const {watchlist} = useContext(WatchlistContext)
+
   return (
     <>
       <div className="navigation-container">
@@ -17,7 +20,7 @@ export default function Navigation() {
             Popular
           </Link>
           <Link className="nav-link" to="/watchlist">
-            Watchlist
+            Watchlist ({watchlist.length})
           </Link>
         </div>
       </div>

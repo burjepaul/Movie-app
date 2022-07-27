@@ -1,36 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { ReactComponent as StarLogo } from "../../assets/star.svg";
 import { ReactComponent as BookmarkFull } from "../../assets/bookmark-fill.svg";
 import { ReactComponent as BookmarkEmpty } from "../../assets/bookmark-empty.svg";
+import DateForm from "../date-form/dateForm.component";
+import { WatchlistContext } from "../../contexts/watchlist.context";
 
 import "./card.styles.css";
 import notFoundImg from "./../../assets/not-found.png";
 
 function setCardImageWidth(displayWidth) {
-  if (displayWidth > 1500) return 5;
-  else if (displayWidth > 1300 && displayWidth <= 1500) return 4;
+  if (displayWidth > 1500) return 3;
+  else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
   else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
   else if (displayWidth <= 1000) return 2;
 }
 
+ const checkIfInWatchlist = function(list, movieId) {
+  for(let i =0; i<list.length; i++){
+    if (list[i].id === movieId) return true;
+  }
+  return false;
+ }
 
 export default function Card({ movie }) {
-  const {  title, backdrop_path, vote_average, vote_count, release_date } =
-    movie;
+  const { watchlist, setWatchlist } = useContext(WatchlistContext);
+  const [isBookmarked, setIsBookmarked] = useState(checkIfInWatchlist(watchlist, movie.id));
 
+  const handleBookamrkToggle = () => {
+    setIsBookmarked(!isBookmarked)
+  };
+
+  const handleWatchlist = () => {
+    if (!isBookmarked) {
+      setWatchlist([...watchlist, movie]);
+    } else {
+      setWatchlist(
+        watchlist.filter((watchlistMovie) => watchlistMovie.id !== movie.id)
+      );
+    }
+    console.log(watchlist);
+  };
+
+  const bookmarkHandler = () => {
+    handleBookamrkToggle();
+    handleWatchlist();
+  };
+
+  const { title, poster_path, vote_average, vote_count, release_date } =
+    movie;
 
   return (
     <div className="card">
       <h4 className="movie-title">{title}</h4>
-      <BookmarkEmpty className="bookmark-logo empty" />
+      {isBookmarked? (
+        <BookmarkFull className="bookmark-logo" onClick={bookmarkHandler} />
+      ) : (
+        <BookmarkEmpty className="bookmark-logo" onClick={bookmarkHandler} />
+      )}
 
-      {backdrop_path ? (
+      {poster_path ? (
         <img
           className="movie-image"
           src={`https://image.tmdb.org/t/p/w${setCardImageWidth(
             window.innerWidth
-          )}00${backdrop_path}`}
+          )}00${poster_path}`}
           alt={title}
         />
       ) : (
@@ -42,9 +76,7 @@ export default function Card({ movie }) {
         />
       )}
       <div className="card-footer">
-        <div className="release-date">
-          <span>{release_date}</span>
-        </div>
+        <DateForm date={release_date} />
         <div className="rating-container">
           <StarLogo className="star-logo" />
           <div className="notes-container">
