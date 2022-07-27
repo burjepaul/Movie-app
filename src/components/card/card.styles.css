@@ -8,7 +8,6 @@
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px 0px;
-  
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   transform: translateZ(0);
@@ -18,7 +17,6 @@
 .card:hover {
   transform: scale(1.04);
 }
-
 
 .movie-title{
   color: aqua;
@@ -63,5 +61,9 @@
 @media (max-width: 500px) {
   .bookmark-logo{
     width: 25px;
+  }
+  .card{
+    zoom: 0.4;
+    -moz-transform: scale(0.4);
   }
 }

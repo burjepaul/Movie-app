@@ -8,7 +8,8 @@
 
 @media (max-width: 500px) {
   .card-container {
-    grid-template-columns: 1fr;
-    margin: auto;
+    width: 10vw;
+    margin:10%;
+    grid-gap: 10px;
   }
 }
