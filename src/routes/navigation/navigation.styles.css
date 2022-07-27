@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 .navigation-container {
   height: 70px;
@@ -28,5 +28,28 @@
   padding: 10px 15px;
   cursor: pointer;
   text-decoration: none;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.main-logo {
+  height: 35px;
+  width: 250px;
+}
+
+@media (max-width: 500px) {
+  .logo-container {
+    height: 50%;
+    width: 30px;
+  }
+
+  .link-container {
+    width: 10%;
+    height: 40%;
+    font-size: smaller;
+  }
+
+  .main-logo {
+    height: 15px;
+    width: 120px;
+  }
 }

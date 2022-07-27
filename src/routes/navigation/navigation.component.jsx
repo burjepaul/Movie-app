@@ -12,7 +12,7 @@ export default function Navigation() {
       <div className="navigation-container">
         <div className="logo-container">
           <Link className="nav-link" to="/">
-            <MainLogo style={{ height: 35, width: 250 }}/>
+            <MainLogo className="main-logo"/>
           </Link>
         </div>
         <div className="link-container">

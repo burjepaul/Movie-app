@@ -1,7 +1,14 @@
-.card-container{
-    width: 60vw;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 60px;
+.card-container {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
 }
