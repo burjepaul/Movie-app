@@ -16,19 +16,21 @@ function setCardImageWidth(displayWidth) {
   else if (displayWidth <= 1000) return 2;
 }
 
- const checkIfInWatchlist = function(list, movieId) {
-  for(let i =0; i<list.length; i++){
+const checkIfInWatchlist = function (list, movieId) {
+  for (let i = 0; i < list.length; i++) {
     if (list[i].id === movieId) return true;
   }
   return false;
- }
+};
 
-export default function Card({ movie }) {
+export default function Card({ movie, onClickCard }) {
   const { watchlist, setWatchlist } = useContext(WatchlistContext);
-  const [isBookmarked, setIsBookmarked] = useState(checkIfInWatchlist(watchlist, movie.id));
+  const [isBookmarked, setIsBookmarked] = useState(
+    checkIfInWatchlist(watchlist, movie.id)
+  );
 
   const handleBookamrkToggle = () => {
-    setIsBookmarked(!isBookmarked)
+    setIsBookmarked(!isBookmarked);
   };
 
   const handleWatchlist = () => {
@@ -47,13 +49,18 @@ export default function Card({ movie }) {
     handleWatchlist();
   };
 
-  const { title, poster_path, vote_average, vote_count, release_date } =
-    movie;
+  const handleBackOfTheCard = () => {
+    onClickCard(movie)
+  };
+
+  const { title, poster_path, vote_average, vote_count, release_date } = movie;
 
   return (
     <div className="card">
-      <h4 className="movie-title">{title}</h4>
-      {isBookmarked? (
+      <h4 className="movie-title" onClick={handleBackOfTheCard}>
+        {title}
+      </h4>
+      {isBookmarked ? (
         <BookmarkFull className="bookmark-logo" onClick={bookmarkHandler} />
       ) : (
         <BookmarkEmpty className="bookmark-logo" onClick={bookmarkHandler} />
@@ -61,6 +68,7 @@ export default function Card({ movie }) {
 
       {poster_path ? (
         <img
+          onClick={handleBackOfTheCard}
           className="movie-image"
           src={`https://image.tmdb.org/t/p/w${setCardImageWidth(
             window.innerWidth
@@ -69,14 +77,16 @@ export default function Card({ movie }) {
         />
       ) : (
         <img
+          onClick={handleBackOfTheCard}
           className="movie-image"
           src={notFoundImg}
           alt={title}
           style={{ height: "200px" }}
         />
       )}
-      <div className="card-footer">
+      <div className="card-footer" onClick={handleBackOfTheCard}>
         <DateForm date={release_date} />
+
         <div className="rating-container">
           <StarLogo className="star-logo" />
           <div className="notes-container">

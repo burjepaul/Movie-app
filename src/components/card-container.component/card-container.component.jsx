@@ -23,13 +23,23 @@ const CardContainer = ({ searchField }) => {
         )
       );
   }, [searchField]);
-  return (
-    <div className="card-container">
-      {popularMovies.map((movie) => 
-        (<Card key={movie.id} movie={movie} />)
-      )}
-    </div>
-  );
+
+  const handleBackOfTheCard = (movie) => {
+    console.log(movie)
+  }
+
+  if (popularMovies.length !== 0) {
+    return (
+      <div className="card-container">
+        {popularMovies.map((movie) => (
+          <Card key={movie.id} movie={movie} onClickCard={handleBackOfTheCard}/>
+        ))}
+      </div>
+    );
+  } else
+    return (
+      <h1 className="empty-message">No movie with title "{searchField}"</h1>
+    );
 };
 
 export default CardContainer;

@@ -7,7 +7,7 @@ body {
       transparent 0,
       #1272ae 28px
     ),
-    repeating-linear-gradient(#13188055, #131880);
+    repeating-radial-gradient(#13188055, #131880);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

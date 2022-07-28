@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima&display=swap");
+
 .card-container {
   width: 60vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 60px;
+}
+
+.empty-message{
+  text-align: center;
+  font-family: "Arima", cursive;
+  font-size: 3rem;
+  color: aqua;
 }
 
 @media (max-width: 500px) {
