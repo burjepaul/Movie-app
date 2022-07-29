@@ -39,8 +39,8 @@ export default function BackCard({ movie, onClickCard }) {
 
   let list = "";
   genres.splice(3)
-  genres.map((genre) => {
-    list += genre.name + "/";
+  genres.map((genre) => { return(
+    list += genre.name + "/")
   });
 
   let imdbLink = "https://www.imdb.com/title/" + imdb_id;
