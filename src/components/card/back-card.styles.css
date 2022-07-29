@@ -1,0 +1,36 @@
+.movie-descriptioon{ 
+    padding:1% 5%;
+    color: aqua;
+    text-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+
+.movie-text-desctiption{
+    font-weight: bold;
+    font-size: small;
+}
+
+.movie-genre{
+    font-weight: bold;
+    font-size: small;
+    padding:1% 5%;
+    color: aqua;
+    text-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+.imdb-logo-ref{
+    margin-right: 15%;
+    margin:1% 5%;
+
+}
+
+.imdb-logo:hover{
+    transform: scale(1.1);
+}
+
+.imdb-and-genre{
+    display: flex;
+}
+
+.movie-production-logo{
+    width: 15%;
+    margin: auto;
+}

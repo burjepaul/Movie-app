@@ -17,7 +17,7 @@ function DateForm({ date }) {
   else{
     return(
       <div className='expense-date'>
-        N/A
+        N/D
       </div>
     )
   }

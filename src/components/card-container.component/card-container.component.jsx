@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 
 import Card from "../card/card.component";
 
-import { API_KEY } from "../../config";
 import "./card-container.css";
+import { API_KEY } from "../../config";
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -24,15 +24,12 @@ const CardContainer = ({ searchField }) => {
       );
   }, [searchField]);
 
-  const handleBackOfTheCard = (movie) => {
-    console.log(movie)
-  }
 
   if (popularMovies.length !== 0) {
     return (
       <div className="card-container">
         {popularMovies.map((movie) => (
-          <Card key={movie.id} movie={movie} onClickCard={handleBackOfTheCard}/>
+          <Card movie={movie} key={movie.id}/>
         ))}
       </div>
     );

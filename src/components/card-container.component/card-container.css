@@ -15,6 +15,20 @@
   color: aqua;
 }
 
+
+
+@media (max-width: 1500px) {
+  .card-container {
+    width: 40vw;
+    margin:10%;
+  }
+}
+@media (max-width: 1170px) {
+  .card-container {
+    width: 30vw;
+    margin:5%;
+  }
+}
 @media (max-width: 500px) {
   .card-container {
     width: 10vw;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { API_KEY } from "../../config";
+
 import Card from "../../components/card/card.component";
 import PageHandler from "../../components/page-handler/page-handler.component";
 import "./popular.styles.css";
