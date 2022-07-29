@@ -29,7 +29,7 @@ export default function BackCard({ movie, onClickCard }) {
     )
       .then((response) => response.json())
       .then((result) => setDetailedMovie(result));
-  }, []);
+  }, [movie]);
 
   if (!detailedMovie) return;
   console.log(detailedMovie);
