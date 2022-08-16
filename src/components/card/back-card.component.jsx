@@ -81,7 +81,7 @@ export default function BackCard({ movie, onClickCard }) {
         </a>
         <p className="movie-genre">{list.slice(0, list.length - 1)}</p>
       </div>
-      {production_companies.length > 0 ? 
+      {production_companies.length > 0 && production_companies[0].logo_path ? 
       <img
           className="movie-production-logo"
           src={`https://image.tmdb.org/t/p/w300${production_companies[0].logo_path}`}
