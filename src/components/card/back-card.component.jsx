@@ -32,7 +32,7 @@ export default function BackCard({ movie, onClickCard }) {
   }, [movie]);
 
   if (!detailedMovie) return;
-  console.log(detailedMovie);
+  // console.log(detailedMovie);
 
   const { title, backdrop_path, overview, tagline, genres, imdb_id, production_companies } =
     detailedMovie;

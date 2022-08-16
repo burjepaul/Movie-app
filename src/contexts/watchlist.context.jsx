@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const WatchlistContext = createContext({
   watchlist: [],
@@ -6,8 +6,24 @@ export const WatchlistContext = createContext({
 });
 
 export const WatchlistProvider = ({ children }) => {
-  const [watchlist, setWatchlist] = useState([]);
+
+  const  getMemoryMovies = () => {
+    const watchlist = JSON.parse(localStorage.getItem("watchlist"));
+    if (watchlist) {
+      return watchlist;
+    }else return []
+  }
+
+  console.log(getMemoryMovies())
+
+  const [watchlist, setWatchlist] = useState(getMemoryMovies());
   const value = { watchlist, setWatchlist };
+
+
+
+  useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+  }, [watchlist]);
 
   return (
     <WatchlistContext.Provider value={value}>
