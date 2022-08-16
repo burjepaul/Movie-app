@@ -4,3 +4,11 @@
     font-size: 3rem;
     color: aqua;
   }
+
+  @media (max-width: 500px) {
+    .empty-message{
+      font-size: 1rem;
+      margin-top: 50%;
+    }
+
+  }

@@ -63,7 +63,7 @@
     width: 25px;
   }
   .card{
-    zoom: 0.4;
-    -moz-transform: scale(0.4);
+    zoom: 0.6;
+    -moz-transform: scale(0.8);
   }
 }
