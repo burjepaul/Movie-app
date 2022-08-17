@@ -20,7 +20,7 @@ export default function TvShow() {
       }
     )
       .then((response) => response.json())
-      .then((result) => setTvShows(result.results.sort((a, b) => b.popularity - a.popularity).filter( movie => movie.poster_path ).splice(0,9)));
+      .then((result) => setTvShows(result.results.sort((a, b) => b.popularity - a.popularity).filter( movie => movie.poster_path ).splice(0,6)));
   }, [searchShows]);
 
   console.log(tvShows);
