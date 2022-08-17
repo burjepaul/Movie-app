@@ -22,6 +22,9 @@ export default function Navigation() {
           <Link className="nav-link" to="/watchlist">
             Watchlist ({watchlist.length})
           </Link>
+          <Link className="nav-link" to="/tvShow">
+            Tv Shows
+          </Link>
         </div>
       </div>
       <Outlet />
