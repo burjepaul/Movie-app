@@ -26,7 +26,7 @@ export default function TvShow() {
   console.log(tvShows);
 
   return (
-    <div>
+    <div >
       <h1 className="home-title">Tv Shows</h1>
       <input type="text" className="search-box" placeholder="search by name" onChange={handleChange}></input>
       <div className="card-container">

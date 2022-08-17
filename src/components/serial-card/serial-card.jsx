@@ -8,6 +8,7 @@ export default function SerialCard({ movie }) {
     <div className="card">
       <h4 className="movie-title">{name}</h4>
       <img
+        className="movie-image"
         src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
         alt={movie.name}
       />
@@ -27,7 +28,7 @@ export default function SerialCard({ movie }) {
             </span>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   );
 }
