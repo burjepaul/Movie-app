@@ -46,4 +46,8 @@
     zoom: 0.6;
     -moz-transform: scale(0.8);
   }
+
+  .season-overview{
+    font-size: x-small;
+  }
 }
