@@ -15,7 +15,7 @@ export default function TvSerialSeasons({ movieId }) {
     )
       .then((response) => response.json())
       .then((result) => setTvSeasons(result.seasons));
-  }, []);
+  }, [movieId]);
 
   console.log(tvSeasons);
   if (tvSeasons) {
