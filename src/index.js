@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import { WatchlistProvider } from "./contexts/watchlist.context";
+import { TVShowIDProvider } from "./contexts/tvShow-id.context";
 
 import "./index.css";
 
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <WatchlistProvider>
-        <App />
-      </WatchlistProvider>
+      <TVShowIDProvider>
+        <WatchlistProvider>
+          <App />
+        </WatchlistProvider>
+      </TVShowIDProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

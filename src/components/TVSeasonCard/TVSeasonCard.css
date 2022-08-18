@@ -1,0 +1,49 @@
+.season-card {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #434bc0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 0px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  /* transform: translateZ(0); */
+  transition: transform 0s ease-out;
+}
+
+.season-card:hover {
+  transform: scale(1.04);
+}
+
+.episode_count {
+  text-align: center;
+  color: aqua;
+  margin-top: -1rem;
+}
+
+.season-title {
+  color: aqua;
+  text-align: center;
+}
+
+.season-image {
+  position: relative;
+}
+
+.season-overview {
+  position: absolute;
+  font-size: smaller;
+  color: aqua;
+  font-weight: 500;
+  background-color: hsl(0, 0%, 0%, 0.5);
+  bottom: 15%;
+  padding: 1px;
+}
+
+@media (max-width: 500px) {
+  .season-card {
+    zoom: 0.6;
+    -moz-transform: scale(0.8);
+  }
+}
