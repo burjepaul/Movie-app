@@ -15,7 +15,7 @@ function setCardImageWidth(displayWidth) {
 
 
 export default function TVSeasonCard({ season, onClickCard }) {
-  const { poster_path, name, air_date, episode_count, overview, id } = season;
+  const { poster_path, name, air_date, episode_count, overview } = season;
   const { seasonNo } = useContext(TVSeasonIDContext);
 
   const handleCardClick = () => [onClickCard(season)];
