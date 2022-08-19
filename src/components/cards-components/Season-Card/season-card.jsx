@@ -1,19 +1,15 @@
 import React from "react";
-import DateForm from "../date-form/dateForm.component";
-
-import "./TVSeasonCard.css";
-import notFoundImg from "./../../assets/not-found.png";
 import { Link } from "react-router-dom";
 
-function setCardImageWidth(displayWidth) {
-  if (displayWidth > 1500) return 3;
-  else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
-  else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
-  else if (displayWidth <= 1000) return 2;
-}
+import DateForm from "../../date-form/dateForm.component";
+import notFoundImg from "./../../../assets/not-found.png";
+import { setCardImageWidth } from "../../../assets/functions";
+
+import "./season-card.css";
 
 
-export default function TVSeasonCard({ season, onClickCard }) {
+
+export default function SeasonCard({ season, onClickCard }) {
   const { poster_path, name, air_date, episode_count, overview } = season;
 
   const handleCardClick = () => [onClickCard(season)];
@@ -22,7 +18,7 @@ export default function TVSeasonCard({ season, onClickCard }) {
     <Link to={`./${+name.slice(-1)}`} style={{ textDecoration: "none" }}>
       <div className="season-card" onClick={handleCardClick}>
         <h3 className="season-title">{name}</h3>
-        <p className="episode_count">No of Episodes {episode_count}</p>
+        <p className="season-episode-number">No of Episodes {episode_count}</p>
         {poster_path ? (
           <img
             className="movie-image"

@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import { API_KEY } from "../../config";
-import notFoundImg from "./../../assets/not-found.png";
-import imdbLogo from "./../../assets/imdb-Logo.svg.png";
+import { API_KEY } from "../../../config";
+import notFoundImg from "./../../../assets/not-found.png";
+import imdbLogo from "./../../../assets/imdb-Logo.svg.png";
+import { setCardImageWidth } from "../../../assets/functions";
 
 import "./back-card.styles.css";
 
-function setCardImageWidth(displayWidth) {
-  if (displayWidth > 1500) return 3;
-  else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
-  else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
-  else if (displayWidth <= 1000) return 2;
-}
+
 
 export default function BackCard({ movie, onClickCard }) {
   const [detailedMovie, setDetailedMovie] = useState();

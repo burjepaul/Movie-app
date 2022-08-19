@@ -1,8 +1,13 @@
-import React, { useContext } from "react";
-import { useState, useEffect } from "react";
-import { API_KEY } from "../../config";
-import TVSeasonCard from "../TVSeasonCard/TVSeasonCard";
-import { TVSeasonIDContext } from "../../contexts/tvShow-seasonID.context";
+import React, { useContext, useState, useEffect } from "react";
+
+import SeasonCard from "../../cards-components/Season-Card/season-card";
+
+import { TVSeasonIDContext } from "../../../contexts/tvShow-seasonID.context";
+
+import { API_KEY } from "../../../config";
+
+import "./seasons-container.css"
+
 
 export default function TvSerialSeasons({ serialId }) {
   const [tvSeasons, setTvSeasons] = useState();
@@ -23,12 +28,11 @@ export default function TvSerialSeasons({ serialId }) {
     setSeasonNo(+season.name.slice(-1));
   }
 
-  console.log(tvSeasons);
   if (tvSeasons) {
     return (
-        <div className="card-container">
+        <div className="season-card-container">
           {tvSeasons.map((season) => (
-            <TVSeasonCard season={season} key={season.id} onClickCard={handleTVShowPage} />
+            <SeasonCard season={season} key={season.id} onClickCard={handleTVShowPage} />
           ))}
         </div>
     );

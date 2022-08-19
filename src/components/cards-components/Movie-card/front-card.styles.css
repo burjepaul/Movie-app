@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
-
-.card{
+.card {
   display: flex;
   flex-direction: column;
   background-color: #434bc0;
@@ -18,51 +17,50 @@
   transform: scale(1.04);
 }
 
-.movie-title{
+.movie-title {
   color: aqua;
   text-align: center;
 }
 
-.star-logo{
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rating-container {
+  display: flex;
+}
+
+.star-logo {
   margin: 0.5rem 0.5rem;
   height: 2rem;
 }
 
-.card-footer{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-}
-
-.release-date{
-  color: #eeff00;
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
-.rating-container{
-  display: flex;
-}
-
-.notes-container{
+.notes-container {
   padding-top: 0.3rem;
   font-size: smaller;
   color: aqua;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
-.bookmark-logo{
-  margin-left: 85% ;
+.release-date {
+  color: #eeff00;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.bookmark-logo {
+  margin-left: 85%;
   position: absolute;
   height: auto;
   width: 40px;
 }
 
 @media (max-width: 500px) {
-  .bookmark-logo{
+  .bookmark-logo {
     width: 25px;
   }
-  .card{
+  .card {
     zoom: 0.6;
     -moz-transform: scale(0.8);
   }

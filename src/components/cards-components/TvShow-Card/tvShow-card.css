@@ -1,0 +1,48 @@
+.tvShow-card {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #434bc0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 0px;
+  -moz-osx-font-smoothing: grayscale;
+  /* transform: translateZ(0); */
+  transition: transform 0s ease-out;
+}
+  
+  .tvShow-card-title {
+    color: aqua;
+    text-align: center;
+  }
+
+  .tvShow-card-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .tvShow-card-rating-container{
+    display: flex;
+  }
+
+  .tvShow-card-star-logo{
+    margin: 0.5rem 0.5rem;
+    height: 2rem;
+  }
+
+  .tvShow-card-notes-container{
+    padding-top: 0.3rem;
+    font-size: smaller;
+    color: aqua;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  @media (max-width: 500px) {
+    .tvShow-card {
+      zoom: 0.6;
+      -moz-transform: scale(0.8);
+    }
+  
+  }
+  

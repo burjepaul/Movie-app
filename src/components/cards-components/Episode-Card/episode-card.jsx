@@ -1,17 +1,12 @@
 import React from 'react'
+
 import DateForm from '../../date-form/dateForm.component';
 import notFoundImg from "./../../../assets/not-found.png";
-
 import { ReactComponent as StarLogo } from "../../../assets/star.svg";
+import { setCardImageWidth } from '../../../assets/functions';
 
 import "./episode-card.css"
 
-function setCardImageWidth(displayWidth) {
-    if (displayWidth > 1500) return 3;
-    else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
-    else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
-    else if (displayWidth <= 1000) return 2;
-  }
 
 export default function EpisodeCard({episode}) {
     const {name, still_path, episode_number, air_date, overview, vote_average, vote_count } = episode

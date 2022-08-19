@@ -3,12 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import Navigation from "./routes/navigation/navigation.component";
 import Popular from "./routes/popular/popular.component";
 import Watchlist from "./routes/watchlist/watchlist.component";
-import TvShow from "./routes/tvShows/tv-show";
+import TvShow from "./routes/tvShows/tvShow-container";
+import TvSerialSeasons from "./components/card-containers/Seasons-container/seasons-container";
+import EpisodesContainer from "./components/card-containers/Episodes-container/episodes-container";
+
 import { useContext } from "react";
 import { TVShowIDContext } from "./contexts/tvShow-id.context";
 import { TVSeasonIDContext } from "./contexts/tvShow-seasonID.context";
-import TvSerialSeasons from "./components/TvSerialSeasons/TvSerialSeasons";
-import TvSerialEpisodes from "./components/TvSerialEpisodes/TvSerialEpisodes";
+
 
 function App() {
   const { id } = useContext(TVShowIDContext);
@@ -30,7 +32,7 @@ function App() {
         </Route>
           <Route
           path={`/tvShow/${id}/${seasonNo}`}
-          element={<TvSerialEpisodes serialId={id} seasonNo={seasonNo}/>}
+          element={<EpisodesContainer serialId={id} seasonNo={seasonNo}/>}
         />
       </Route>
     </Routes>

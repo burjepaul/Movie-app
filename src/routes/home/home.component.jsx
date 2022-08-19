@@ -5,7 +5,7 @@ import { DEFAULT_SEARCH_VALUE } from "../../config";
 
 
 import './home.styles.css'
-import CardContainer from "../../components/card-container.component/card-container.component";
+import CardContainer from "../../components/card-containers/Movie-container/card-container.component";
 
 export default function Home() {
   const [searchField, setSearchField] = useState(DEFAULT_SEARCH_VALUE)

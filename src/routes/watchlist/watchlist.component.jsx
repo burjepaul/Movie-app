@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { WatchlistContext } from "../../contexts/watchlist.context";
 
-import Card from "../../components/card/card.component";
+import Card from "../../components/cards-components/Movie-card/card.component";
 
 import "./watchlist.styles.css";
 

@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import {React, useEffect} from 'react'
-import { API_KEY } from '../../config'
-import EpisodeCard from '../cards-components/Episode-Card/episode-card';
+import {React, useEffect, useState} from 'react'
+import { API_KEY } from '../../../config'
+import EpisodeCard from '../../cards-components/Episode-Card/episode-card';
 
-export default function TvSerialEpisodes({serialId, seasonNo}) {
+import "./episodes-container.css"
+
+export default function EpisodesContainer({serialId, seasonNo}) {
   const [episodes, setEpisodes] = useState([])
 
   useEffect(() => {
@@ -17,9 +18,8 @@ export default function TvSerialEpisodes({serialId, seasonNo}) {
       .then((result) => setEpisodes(result.episodes));
   }, [serialId, seasonNo]);
 
-  console.log(episodes)
   return (
-    <div className='card-container'>
+    <div className='episodes-card-container'>
       {episodes.map(episode => (
         <EpisodeCard episode={episode} ket={episode.id}/>
       ))}

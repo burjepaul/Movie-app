@@ -1,32 +1,29 @@
 import React from "react";
-import DateForm from "../date-form/dateForm.component";
-import { ReactComponent as StarLogo } from "../../assets/star.svg";
+import DateForm from "../../date-form/dateForm.component";
+
 import { Link } from "react-router-dom";
 
-import notFoundImg from "./../../assets/not-found.png";
+import { ReactComponent as StarLogo } from "../../../assets/star.svg";
+import notFoundImg from "./../../../assets/not-found.png";
+import { setCardImageWidth } from "../../../assets/functions";
 
-import "./serial-card.css";
+import "./tvShow-card.css";
 
-export default function SerialCard({ movie, onClickCard }) {
-  function setCardImageWidth(displayWidth) {
-    if (displayWidth > 1500) return 3;
-    else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
-    else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
-    else if (displayWidth <= 1000) return 2;
-  }
 
+export default function TvShowCard({ movie, onClickCard }) {
   const handleCardClick = () => [onClickCard(movie)];
 
   const { name, first_air_date, vote_average, vote_count, id, poster_path } =
     movie;
+
   return (
     <Link to={`./${id}`} style={{ textDecoration: "none" }}>
-      <div className="card" onClick={handleCardClick}>
-        <h4 className="movie-title">{name}</h4>
+      <div className="tvShow-card" onClick={handleCardClick}>
+        <h4 className="tvShow-card-title">{name}</h4>
         {
         poster_path ? (
           <img
-            className="movie-image"
+            className="tvShow-image"
             src={`https://image.tmdb.org/t/p/w${setCardImageWidth(
               window.innerWidth
             )}00${poster_path}`}
@@ -34,18 +31,18 @@ export default function SerialCard({ movie, onClickCard }) {
           />
         ) : (
           <img
-            className="movie-image"
+            className="tvShow-image"
             src={notFoundImg}
             alt={name}
             style={{ height: "200px" }}
           />
         )}
-        <div className="card-footer">
+        <div className="tvShow-card-footer">
           <DateForm date={first_air_date} />
 
-          <div className="rating-container">
-            <StarLogo className="star-logo" />
-            <div className="notes-container">
+          <div className="tvShow-card-rating-container">
+            <StarLogo className="tvShow-card-star-logo" />
+            <div className="tvShow-card-notes-container">
               <span>{vote_average} / 10</span>
               <br></br>
               <span>

@@ -1,5 +1,5 @@
 import { React, useEffect, useState, useContext } from "react";
-import SerialCard from "../../components/serial-card/serial-card";
+import TvShowCard from "../../components/cards-components/TvShow-Card/tvShow-card";
 import { API_KEY, DEFAULT_SEARCH_VALUE } from "../../config";
 import { TVShowIDContext } from "../../contexts/tvShow-id.context";
 
@@ -29,15 +29,13 @@ export default function TvShow() {
       .then((result) => setTvShows(result.results.sort((a, b) => b.popularity - a.popularity).filter( movie => movie.poster_path ).splice(0,6)));
   }, [searchShows]);
 
-  console.log(tvShows);
-
   return (
     <div >
       <h1 className="home-title">Tv Shows</h1>
       <input type="text" className="search-box" placeholder="search by name" onChange={handleChange}></input>
       <div className="card-container">
         {tvShows.map((serial) => (
-          <SerialCard movie={serial} key={serial.id} onClickCard={handleTVShowPage}/>
+          <TvShowCard movie={serial} key={serial.id} onClickCard={handleTVShowPage}/>
         ))}
       </div>
     </div>

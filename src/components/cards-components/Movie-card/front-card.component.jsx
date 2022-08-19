@@ -1,20 +1,16 @@
 import React, { useState, useContext } from "react";
 
-import { ReactComponent as StarLogo } from "../../assets/star.svg";
-import { ReactComponent as BookmarkFull } from "../../assets/bookmark-fill.svg";
-import { ReactComponent as BookmarkEmpty } from "../../assets/bookmark-empty.svg";
-import DateForm from "../date-form/dateForm.component";
-import { WatchlistContext } from "../../contexts/watchlist.context";
+import { ReactComponent as StarLogo } from "../../../assets/star.svg";
+import { ReactComponent as BookmarkFull } from "../../../assets/bookmark-fill.svg";
+import { ReactComponent as BookmarkEmpty } from "../../../assets/bookmark-empty.svg";
+import notFoundImg from "./../../../assets/not-found.png";
+import { setCardImageWidth } from "../../../assets/functions";
+
+import DateForm from "../../date-form/dateForm.component";
+import { WatchlistContext } from "../../../contexts/watchlist.context";
 
 import "./front-card.styles.css";
-import notFoundImg from "./../../assets/not-found.png";
 
-function setCardImageWidth(displayWidth) {
-  if (displayWidth > 1500) return 3;
-  else if (displayWidth > 1300 && displayWidth <= 1500) return 3;
-  else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
-  else if (displayWidth <= 1000) return 2;
-}
 
 const checkIfInWatchlist = function (list, movieId) {
   for (let i = 0; i < list.length; i++) {

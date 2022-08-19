@@ -1,10 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import {React, useState, useEffect} from "react";
 
-import Card from "../card/card.component";
+import Card from "../../cards-components/Movie-card/card.component";
+
+import { API_KEY } from "../../../config";
 
 import "./card-container.css";
-import { API_KEY } from "../../config";
+
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
