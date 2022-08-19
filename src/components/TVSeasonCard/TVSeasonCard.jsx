@@ -16,12 +16,11 @@ function setCardImageWidth(displayWidth) {
 
 export default function TVSeasonCard({ season, onClickCard }) {
   const { poster_path, name, air_date, episode_count, overview } = season;
-  const { seasonNo } = useContext(TVSeasonIDContext);
 
   const handleCardClick = () => [onClickCard(season)];
 
   return (
-    <Link to={`./${seasonNo}`} style={{ textDecoration: "none" }}>
+    <Link to={`./${+name.slice(-1)}`} style={{ textDecoration: "none" }}>
       <div className="season-card" onClick={handleCardClick}>
         <h3 className="season-title">{name}</h3>
         <p className="episode_count">No of Episodes {episode_count}</p>
