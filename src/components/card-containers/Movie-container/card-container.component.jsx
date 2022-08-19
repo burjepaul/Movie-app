@@ -20,7 +20,7 @@ const CardContainer = ({ searchField }) => {
       .then((response) => response.json())
       .then((result) =>
         setPopularMovies(
-          result.results.slice(0, 12).sort((a, b) => b.popularity - a.popularity)
+          result.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
         )
       );
   }, [searchField]);
