@@ -9,16 +9,19 @@ import { TVShowIDProvider } from "./contexts/tvShow-id.context";
 import "./index.css";
 
 import reportWebVitals from "./reportWebVitals";
+import { TVSeasonIDProvider } from "./contexts/tvShow-seasonID.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <TVShowIDProvider>
-        <WatchlistProvider>
-          <App />
-        </WatchlistProvider>
-      </TVShowIDProvider>
+      <TVSeasonIDProvider>
+        <TVShowIDProvider>
+          <WatchlistProvider>
+            <App />
+          </WatchlistProvider>
+        </TVShowIDProvider>
+      </TVSeasonIDProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,0 +1,43 @@
+.episode-card {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #434bc0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 0px;
+  -moz-osx-font-smoothing: grayscale;
+  /* transform: translateZ(0); */
+  transition: transform 0s ease-out;
+}
+
+.episode-count {
+    text-align: center;
+    color: aqua;
+    margin-top: -1rem;
+  }
+  
+  .episode-title {
+    color: aqua;
+    text-align: center;
+  }
+  
+  .episode-overview {
+    font-size: smaller;
+    color: aqua;
+    font-weight: 500;
+    bottom: 15%;
+    padding:0px 10px;
+  }
+  
+  @media (max-width: 500px) {
+    .episode-card {
+      zoom: 0.6;
+      -moz-transform: scale(0.8);
+    }
+  
+    .episode-overview{
+      font-size: x-small;
+    }
+  }
+  

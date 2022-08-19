@@ -6,11 +6,13 @@ import Watchlist from "./routes/watchlist/watchlist.component";
 import TvShow from "./routes/tvShows/tv-show";
 import { useContext } from "react";
 import { TVShowIDContext } from "./contexts/tvShow-id.context";
+import { TVSeasonIDContext } from "./contexts/tvShow-seasonID.context";
 import TvSerialSeasons from "./components/TvSerialSeasons/TvSerialSeasons";
-
+import TvSerialEpisodes from "./components/TvSerialEpisodes/TvSerialEpisodes";
 
 function App() {
-  const {id} = useContext(TVShowIDContext)
+  const { id } = useContext(TVShowIDContext);
+  const { seasonNo } = useContext(TVSeasonIDContext);
 
   return (
     <Routes>
@@ -18,9 +20,18 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/watchlist" element={<Watchlist />} />
-        <Route path="/tvShow" element={<TvShow />} />
-        <Route path={`/tvShow/${id}`} element={<TvSerialSeasons movieId={id}/>} />
-        {/* ********Context cu id-ul serialului********** */}
+        <Route exact path="/tvShow" element={<TvShow />} />
+        <Route
+          exact
+          path={`/tvShow/${id}`}
+          element={<TvSerialSeasons serialId={id} />}
+        >
+
+        </Route>
+          <Route
+          path={`/tvShow/${id}/${seasonNo}`}
+          element={<TvSerialEpisodes serialId={id} seasonNo={seasonNo}/>}
+        />
       </Route>
     </Routes>
   );
