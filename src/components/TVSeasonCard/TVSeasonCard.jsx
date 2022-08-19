@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import DateForm from "../date-form/dateForm.component";
 
 import "./TVSeasonCard.css";
