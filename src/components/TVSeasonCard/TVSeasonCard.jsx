@@ -4,7 +4,6 @@ import DateForm from "../date-form/dateForm.component";
 import "./TVSeasonCard.css";
 import notFoundImg from "./../../assets/not-found.png";
 import { Link } from "react-router-dom";
-import { TVSeasonIDContext } from "../../contexts/tvShow-seasonID.context";
 
 function setCardImageWidth(displayWidth) {
   if (displayWidth > 1500) return 3;
