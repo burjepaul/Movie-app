@@ -7,15 +7,15 @@ import icons from "../../../assets/icons.svg";
 
 import "./card-container.css";
 
-const renderSpinner = () => {
-  return `
-    <div class="spinner">
-    <svg>
-      <use href="${icons}#icon-loader"></use>
-    </svg>
-  </div>
-    `;
-};
+// const renderSpinner = () => {
+//   return `
+//     <div class="spinner">
+//     <svg>
+//       <use href="${icons}#icon-loader"></use>
+//     </svg>
+//   </div>
+//     `;
+// };
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
