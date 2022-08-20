@@ -3,9 +3,9 @@ import { React, useState, useEffect } from "react";
 import Card from "../../cards-components/Movie-card/card.component";
 
 import { API_KEY } from "../../../config";
-import icons from "../../../assets/icons.svg";
 
 import "./card-container.css";
+import Spinner from "../../spinner/spinner";
 
 // const renderSpinner = () => {
 //   return `
@@ -20,12 +20,6 @@ import "./card-container.css";
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
 
-  <div class="spinner">
-  <svg>
-    <use href={`${icons}#icon-loader`}></use>
-  </svg>
-</div>
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetch(
@@ -35,16 +29,16 @@ const CardContainer = ({ searchField }) => {
         }
       );
       const json = await data.json();
-        console.log(json)
+      console.log(json);
       setPopularMovies(
         json.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
       );
     };
 
     fetchData();
-
-    console.log(fetchData());
   }, [searchField]);
+
+  while (!popularMovies) return <Spinner />;
 
   if (popularMovies.length !== 0) {
     return (

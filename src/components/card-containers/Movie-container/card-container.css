@@ -15,27 +15,6 @@
   color: aqua;
 }
 
-.spinner {
-  margin: 5rem auto;
-  text-align: center;
-}
-.spinner svg {
-  height: 6rem;
-  width: 6rem;
-  fill: #f38e82;
-  animation: rotate 2s infinite linear;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
 @media (max-width: 1500px) {
   .card-container {
     width: 40vw;
