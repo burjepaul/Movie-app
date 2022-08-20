@@ -20,6 +20,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 60px;
+    padding-bottom: 3rem ;
   }
   
   @media (max-width: 1500px) {
