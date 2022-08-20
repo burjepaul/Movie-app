@@ -1,8 +1,8 @@
-import React from "react";
-import { useContext } from "react";
-import { WatchlistContext } from "../../contexts/watchlist.context";
+import { React, useContext } from "react";
 
 import Card from "../../components/cards-components/Movie-card/card.component";
+
+import { WatchlistContext } from "../../contexts/watchlist.context";
 
 import "./watchlist.styles.css";
 
@@ -11,8 +11,8 @@ export default function Watchlist() {
   if (watchlist.length !== 0) {
     return (
       <>
-        <h1 className="home-title">Your Watchlist Movies</h1>
-        <div className="card-container">
+        <h1 className="watchlist-page-title">Your Watchlist Movies</h1>
+        <div className="watchlist-page-card-container">
           {watchlist.map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
@@ -22,8 +22,8 @@ export default function Watchlist() {
   } else {
     return (
       <>
-        <h1 className="home-title">Your Watchlist Movies</h1>
-        <h1 className="empty-message">Your Watchlist is Empty</h1>
+        <h1 className="watchlist-page-title">Your Watchlist Movies</h1>
+        <h1 className="watchlist-page-empty-message">Your Watchlist is Empty</h1>
       </>
     );
   }

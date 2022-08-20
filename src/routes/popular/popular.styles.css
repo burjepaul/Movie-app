@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima&display=swap");
+
+.popular-page-title {
+  text-align: center;
+  font-family: "Arima", cursive;
+  font-size: 5rem;
+  color: aqua;
+}
+
+.popular-page-card-container {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+
+@media (max-width: 1500px) {
+  .popular-page-card-container {
+    width: 40vw;
+    margin: 10%;
+  }
+}
+@media (max-width: 1170px) {
+  .popular-page-card-container {
+    width: 30vw;
+    margin: 5%;
+  }
+}
+@media (max-width: 500px) {
+  .popular-page-card-container {
+    width: 10vw;
+    margin: 10%;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .popular-page-title {
+    font-size: 2rem;
+  }
+}

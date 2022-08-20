@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { API_KEY } from "../../config";
+import React, { useState, useEffect } from "react";
 
-import PageHandler from "../../components/page-handler/page-handler.component";
-import "./popular.styles.css";
 import Card from "../../components/cards-components/Movie-card/card.component";
+import PageHandler from "../../components/page-handler/page-handler.component";
+
+import { API_KEY } from "../../config";
+import "./popular.styles.css";
 
 export default function Popular() {
   const [topPopularMovies, setTopPopularMovies] = useState([]);
@@ -18,18 +18,19 @@ export default function Popular() {
       }
     )
       .then((response) => response.json())
-      .then((result) => setTopPopularMovies(result.results));
+      .then((result) => setTopPopularMovies(result.results.splice(0, 18)));
   }, [page]);
 
   return (
     <>
-    <h1 className="home-title">Popular Movies</h1>
-    <PageHandler page={page} setPage={setPage}/>
-    <div className="card-container">
-      {topPopularMovies.map((movie) => (
-        <Card key={movie.id} movie={movie} />
-      ))}
-    </div>
+      <h1 className="popular-page-title">Popular Movies</h1>
+      <PageHandler page={page} setPage={setPage} />
+      <div className="popular-page-card-container">
+        {topPopularMovies.map((movie) => (
+          <Card key={movie.id} movie={movie} />
+        ))}
+      </div>
+      <PageHandler page={page} setPage={setPage} />
     </>
   );
 }

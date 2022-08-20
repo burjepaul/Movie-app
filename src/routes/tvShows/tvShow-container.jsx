@@ -1,7 +1,12 @@
 import { React, useEffect, useState, useContext } from "react";
+
 import TvShowCard from "../../components/cards-components/TvShow-Card/tvShow-card";
+
 import { API_KEY, DEFAULT_SEARCH_VALUE } from "../../config";
+
 import { TVShowIDContext } from "../../contexts/tvShow-id.context";
+
+import "./tvShow-container.css"
 
 export default function TvShow() {
   const [tvShows, setTvShows] = useState([]);
@@ -31,9 +36,9 @@ export default function TvShow() {
 
   return (
     <div >
-      <h1 className="home-title">Tv Shows</h1>
+      <h1 className="tvShow-page-title">Tv Shows</h1>
       <input type="text" className="search-box" placeholder="search by name" onChange={handleChange}></input>
-      <div className="card-container">
+      <div className="tvShow-page-title-card-container">
         {tvShows.map((serial) => (
           <TvShowCard movie={serial} key={serial.id} onClickCard={handleTVShowPage}/>
         ))}

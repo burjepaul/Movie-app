@@ -4,13 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2rem;
+    padding: 2rem 0 4rem 0;
 }
 
 .arrow{
     color: aqua;
     font-weight: bold;
-    font-size: larger;
+    font-size: x-large;
     cursor:pointer;
     transition: transform 0.25s ease-out;
 }
@@ -23,6 +23,6 @@
     border-radius: 5px;
     padding: 0.4rem 1.4rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-size:x-large;
+    font-size:xx-large;
     margin: 0 20px;
 }

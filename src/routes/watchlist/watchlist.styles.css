@@ -1,14 +1,53 @@
-.empty-message{
+@import url("https://fonts.googleapis.com/css2?family=Arima&display=swap");
+
+.watchlist-page-empty-message{
     text-align: center;
     font-family: "Arima", cursive;
     font-size: 3rem;
     color: aqua;
   }
 
+  .watchlist-page-title {
+    text-align: center;
+    font-family: "Arima", cursive;
+    font-size: 5rem;
+    color: aqua;
+  }
+  
+  .watchlist-page-card-container {
+    width: 60vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 60px;
+  }
+  
+  @media (max-width: 1500px) {
+    .watchlist-page-card-container {
+      width: 40vw;
+      margin: 10%;
+    }
+  }
+  @media (max-width: 1170px) {
+    .watchlist-page-card-container {
+      width: 30vw;
+      margin: 5%;
+    }
+  }
   @media (max-width: 500px) {
-    .empty-message{
+    .watchlist-page-card-container {
+      width: 10vw;
+      margin: 10%;
+      grid-gap: 25px;
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .watchlist-page-title {
+      font-size: 2rem;
+    }
+
+    .watchlist-page-empty-message{
       font-size: 1rem;
       margin-top: 50%;
     }
-
   }
