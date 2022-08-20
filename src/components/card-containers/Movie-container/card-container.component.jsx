@@ -20,7 +20,11 @@ const renderSpinner = () => {
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
 
-  if (!popularMovies) renderSpinner();
+  <div class="spinner">
+  <svg>
+    <use href={`${icons}#icon-loader`}></use>
+  </svg>
+</div>
 
   useEffect(() => {
     const fetchData = async () => {
