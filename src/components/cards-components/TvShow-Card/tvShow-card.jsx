@@ -1,8 +1,9 @@
-import React from "react";
-import DateForm from "../../date-form/dateForm.component";
-
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { TVShowIDContext } from "../../../contexts/tvShow-id.context";
+
+import DateForm from "../../date-form/dateForm.component";
 import { ReactComponent as StarLogo } from "../../../assets/star.svg";
 import notFoundImg from "./../../../assets/not-found.png";
 import { setCardImageWidth } from "../../../assets/functions";
@@ -10,11 +11,13 @@ import { setCardImageWidth } from "../../../assets/functions";
 import "./tvShow-card.css";
 
 
-export default function TvShowCard({ movie, onClickCard }) {
-  const handleCardClick = () => [onClickCard(movie)];
-
+export default function TvShowCard({ movie }) {
+  const { setID } = useContext(TVShowIDContext);
+  
   const { name, first_air_date, vote_average, vote_count, id, poster_path } =
-    movie;
+  movie;
+
+  const handleCardClick = () => {setID(movie.id)};
 
   return (
     <Link to={`./${id}`} style={{ textDecoration: "none" }}>

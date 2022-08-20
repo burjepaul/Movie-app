@@ -1,40 +1,38 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import SeasonCard from "../../cards-components/Season-Card/season-card";
 
-import { TVSeasonIDContext } from "../../../contexts/tvShow-seasonID.context";
-
 import { API_KEY } from "../../../config";
+import { fetchDataAsync } from "../../../assets/functions";
 
-import "./seasons-container.css"
-
+import "./seasons-container.css";
 
 export default function TvSerialSeasons({ serialId }) {
   const [tvSeasons, setTvSeasons] = useState();
-  const {setSeasonNo} = useContext(TVSeasonIDContext)
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${serialId}?api_key=${API_KEY}&language=en-US`,
-      {
-        method: "GET",
-      }
-    )
-      .then((response) => response.json())
-      .then((result) => setTvSeasons(result.seasons.filter(season => season.name !== 'Specials')));
-  }, [serialId]);
+    const fetchData = async () => {
+      const result = await fetchDataAsync(
+        `https://api.themoviedb.org/3/tv/${serialId}?api_key=${API_KEY}&language=en-US`
+      );
 
-  const handleTVShowPage = (season) => {
-    setSeasonNo(+season.name.slice(-1));
-  }
+      setTvSeasons(
+        result.seasons.filter((season) => season.name !== "Specials")
+      );
+    };
+    fetchData();
+  }, [serialId]);
 
   if (tvSeasons) {
     return (
-        <div className="season-card-container">
-          {tvSeasons.map((season) => (
-            <SeasonCard season={season} key={season.id} onClickCard={handleTVShowPage} />
-          ))}
-        </div>
+      <div className="season-card-container">
+        {tvSeasons.map((season) => (
+          <SeasonCard
+            season={season}
+            key={season.id}
+          />
+        ))}
+      </div>
     );
   } else return;
 }

@@ -4,3 +4,12 @@ export function setCardImageWidth(displayWidth) {
   else if (displayWidth > 1000 && displayWidth <= 1300) return 3;
   else if (displayWidth <= 1000) return 2;
 }
+
+
+export const fetchDataAsync =async function (url) {
+  const data = await fetch(url, {
+    method: "GET",
+  });
+  const json = await data.json();
+  return json;
+};

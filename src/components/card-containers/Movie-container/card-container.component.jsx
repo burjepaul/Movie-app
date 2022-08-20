@@ -5,40 +5,22 @@ import Card from "../../cards-components/Movie-card/card.component";
 import { API_KEY } from "../../../config";
 
 import "./card-container.css";
-import Spinner from "../../spinner/spinner";
-
-// const renderSpinner = () => {
-//   return `
-//     <div class="spinner">
-//     <svg>
-//       <use href="${icons}#icon-loader"></use>
-//     </svg>
-//   </div>
-//     `;
-// };
+import { fetchDataAsync } from "../../../assets/functions";
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchField}`,
-        {
-          method: "GET",
-        }
+      const result = await fetchDataAsync(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchField}`
       );
-      const json = await data.json();
-      console.log(json);
       setPopularMovies(
-        json.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
+        result.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
       );
     };
-
     fetchData();
   }, [searchField]);
-
-  while (!popularMovies) return <Spinner />;
 
   if (popularMovies.length !== 0) {
     return (

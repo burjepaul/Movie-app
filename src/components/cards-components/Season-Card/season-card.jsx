@@ -6,13 +6,16 @@ import notFoundImg from "./../../../assets/not-found.png";
 import { setCardImageWidth } from "../../../assets/functions";
 
 import "./season-card.css";
+import { useContext } from "react";
+import { TVSeasonIDContext } from "../../../contexts/tvShow-seasonID.context";
 
-
-
-export default function SeasonCard({ season, onClickCard }) {
+export default function SeasonCard({ season }) {
   const { poster_path, name, air_date, episode_count, overview } = season;
+  const { setSeasonNo } = useContext(TVSeasonIDContext);
 
-  const handleCardClick = () => [onClickCard(season)];
+  const handleCardClick = () => [
+    setSeasonNo(+season.name.slice(-1)),
+  ];
 
   return (
     <Link to={`./${+name.slice(-1)}`} style={{ textDecoration: "none" }}>
