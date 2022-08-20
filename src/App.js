@@ -25,14 +25,14 @@ function App() {
         <Route exact path="/tvShow" element={<TvShow />} />
         <Route
           exact
-          path={`/tvShow/${id}`}
-          element={<TvSerialSeasons serialId={id} />}
+          path={`/tvShow/${id[0]}`}
+          element={<TvSerialSeasons serialId={id[0]} serialName={id[1]}/>}
         >
 
         </Route>
           <Route
-          path={`/tvShow/${id}/${seasonNo}`}
-          element={<EpisodesContainer serialId={id} seasonNo={seasonNo}/>}
+          path={`/tvShow/${id[0]}/${seasonNo}`}
+          element={<EpisodesContainer serialId={id[0]} serialName={id[1]} seasonNo={seasonNo}/>}
         />
       </Route>
     </Routes>

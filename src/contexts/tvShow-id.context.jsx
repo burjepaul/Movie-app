@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
 
 export const TVShowIDContext = createContext({
-    id: '',
+    id: ['',''],
     setID: () => null
 });
 
 export const TVShowIDProvider = ({children}) =>{
-    const [id, setID] = useState()
+    const [id, setID] = useState([])
     const value = {id, setID}
 
     return(

@@ -14,11 +14,8 @@ export const WatchlistProvider = ({ children }) => {
     }else return []
   }
 
-  console.log(getMemoryMovies())
-
   const [watchlist, setWatchlist] = useState(getMemoryMovies());
   const value = { watchlist, setWatchlist };
-
 
 
   useEffect(() => {

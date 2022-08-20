@@ -5,10 +5,15 @@ import SeasonCard from "../../cards-components/Season-Card/season-card";
 import { API_KEY } from "../../../config";
 import { fetchDataAsync } from "../../../assets/functions";
 
-import "./seasons-container.css";
+import { ReactComponent as BackArrowLogo } from "../../../assets/back-arrow.svg";
 
-export default function TvSerialSeasons({ serialId }) {
+import "./seasons-container.css";
+import { useNavigate } from "react-router-dom";
+
+export default function TvSerialSeasons({ serialId, serialName }) {
   const [tvSeasons, setTvSeasons] = useState();
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,14 +30,17 @@ export default function TvSerialSeasons({ serialId }) {
 
   if (tvSeasons) {
     return (
-      <div className="season-card-container">
-        {tvSeasons.map((season) => (
-          <SeasonCard
-            season={season}
-            key={season.id}
-          />
-        ))}
-      </div>
+      <>
+        <div className="seasons-container-header">
+          <BackArrowLogo className="seasons-container-arrow-logo" onClick={() => navigate(-1)}/>
+          <h1 className="season-page-title">{serialName}</h1>
+        </div>
+        <div className="season-card-container">
+          {tvSeasons.map((season) => (
+            <SeasonCard season={season} key={season.id} />
+          ))}
+        </div>
+      </>
     );
   } else return;
 }

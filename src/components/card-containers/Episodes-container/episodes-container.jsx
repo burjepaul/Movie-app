@@ -1,12 +1,19 @@
 import { React, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import EpisodeCard from "../../cards-components/Episode-Card/episode-card";
+
+import { ReactComponent as BackArrowLogo } from "../../../assets/back-arrow.svg";
 import { fetchDataAsync } from "../../../assets/functions";
 import { API_KEY } from "../../../config";
-import EpisodeCard from "../../cards-components/Episode-Card/episode-card";
 
 import "./episodes-container.css";
 
-export default function EpisodesContainer({ serialId, seasonNo }) {
+export default function EpisodesContainer({ serialId, seasonNo, serialName }) {
   const [episodes, setEpisodes] = useState([]);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,10 +26,19 @@ export default function EpisodesContainer({ serialId, seasonNo }) {
   }, [serialId, seasonNo]);
 
   return (
-    <div className="episodes-card-container">
-      {episodes.map((episode) => (
-        <EpisodeCard episode={episode} ket={episode.id} />
-      ))}
-    </div>
+    <>
+      <div className="episodes-container-header">
+        <BackArrowLogo className="episodes-container-arrow-logo" onClick={() => navigate(-1)}/>
+        <div className="episodes-container-titles">
+          <h1 className="episodes-page-title">{serialName}</h1>
+          <h1 className="episodes-season-title">Season {seasonNo}</h1>
+        </div>
+      </div>
+      <div className="episodes-card-container">
+        {episodes.map((episode) => (
+          <EpisodeCard episode={episode} key={episode.id} />
+        ))}
+      </div>
+    </>
   );
 }

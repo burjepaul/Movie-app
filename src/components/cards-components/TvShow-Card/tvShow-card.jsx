@@ -17,7 +17,7 @@ export default function TvShowCard({ movie }) {
   const { name, first_air_date, vote_average, vote_count, id, poster_path } =
   movie;
 
-  const handleCardClick = () => {setID(movie.id)};
+  const handleCardClick = () => {setID([id,movie.name])};
 
   return (
     <Link to={`./${id}`} style={{ textDecoration: "none" }}>
