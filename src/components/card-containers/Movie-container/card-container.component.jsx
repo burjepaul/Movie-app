@@ -5,7 +5,7 @@ import Card from "../../cards-components/Movie-card/card.component";
 import { API_KEY } from "../../../config";
 
 import "./card-container.css";
-import { fetchDataAsync } from "../../../assets/functions";
+import { fetchDataAsync } from "../../../helpers/functions";
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);

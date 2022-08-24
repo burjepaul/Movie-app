@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import EpisodeCard from "../../cards-components/Episode-Card/episode-card";
 
 import { ReactComponent as BackArrowLogo } from "../../../assets/back-arrow.svg";
-import { fetchDataAsync } from "../../../assets/functions";
+import { fetchDataAsync } from "../../../helpers/functions";
 import { API_KEY } from "../../../config";
 
 import "./episodes-container.css";

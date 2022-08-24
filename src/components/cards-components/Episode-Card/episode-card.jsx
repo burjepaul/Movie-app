@@ -3,7 +3,7 @@ import React from 'react'
 import DateForm from '../../date-form/dateForm.component';
 import notFoundImg from "./../../../assets/not-found.png";
 import { ReactComponent as StarLogo } from "../../../assets/star.svg";
-import { setCardImageWidth } from '../../../assets/functions';
+import { setCardImageWidth } from '../../../helpers/functions';
 
 import "./episode-card.css"
 

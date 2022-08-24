@@ -4,7 +4,7 @@ import { ReactComponent as StarLogo } from "../../../assets/star.svg";
 import { ReactComponent as BookmarkFull } from "../../../assets/bookmark-fill.svg";
 import { ReactComponent as BookmarkEmpty } from "../../../assets/bookmark-empty.svg";
 import notFoundImg from "./../../../assets/not-found.png";
-import { setCardImageWidth } from "../../../assets/functions";
+import { setCardImageWidth } from "../../../helpers/functions";
 
 import DateForm from "../../date-form/dateForm.component";
 import { WatchlistContext } from "../../../contexts/watchlist.context";

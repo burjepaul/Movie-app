@@ -6,7 +6,7 @@ import { TVShowIDContext } from "../../../contexts/tvShow-id.context";
 import DateForm from "../../date-form/dateForm.component";
 import { ReactComponent as StarLogo } from "../../../assets/star.svg";
 import notFoundImg from "./../../../assets/not-found.png";
-import { setCardImageWidth } from "../../../assets/functions";
+import { setCardImageWidth } from "../../../helpers/functions";
 
 import "./tvShow-card.css";
 

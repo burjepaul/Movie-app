@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { API_KEY } from "../../../config";
 import notFoundImg from "./../../../assets/not-found.png";
 import imdbLogo from "./../../../assets/imdb-Logo.svg.png";
-import { setCardImageWidth } from "../../../assets/functions";
+import { setCardImageWidth } from "../../../helpers/functions";
 
 import "./back-card.styles.css";
 

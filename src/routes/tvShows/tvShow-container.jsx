@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { fetchDataAsync } from "../../assets/functions";
+import { fetchDataAsync } from "../../helpers/functions";
 
 import TvShowCard from "../../components/cards-components/TvShow-Card/tvShow-card";
 

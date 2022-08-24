@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchDataAsync } from "../../assets/functions";
+import { fetchDataAsync } from "../../helpers/functions";
 
 import Card from "../../components/cards-components/Movie-card/card.component";
 import PageHandler from "../../components/page-handler/page-handler.component";

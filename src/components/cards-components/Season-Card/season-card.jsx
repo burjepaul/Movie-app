@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import DateForm from "../../date-form/dateForm.component";
 import notFoundImg from "./../../../assets/not-found.png";
-import { setCardImageWidth } from "../../../assets/functions";
+import { setCardImageWidth } from "../../../helpers/functions";
 
 import "./season-card.css";
 import { useContext } from "react";

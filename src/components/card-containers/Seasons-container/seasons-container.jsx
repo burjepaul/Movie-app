@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import SeasonCard from "../../cards-components/Season-Card/season-card";
 
 import { API_KEY } from "../../../config";
-import { fetchDataAsync } from "../../../assets/functions";
+import { fetchDataAsync } from "../../../helpers/functions";
 
 import { ReactComponent as BackArrowLogo } from "../../../assets/back-arrow.svg";
 
