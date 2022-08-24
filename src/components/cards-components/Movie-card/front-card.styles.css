@@ -50,7 +50,7 @@
 }
 
 .bookmark-logo {
-  margin-left: 85%;
+  margin-left: 80%;
   position: absolute;
   height: auto;
   width: 40px;
@@ -59,7 +59,6 @@
 @media (max-width: 500px) {
   .bookmark-logo {
     width: 35px;
-    padding-right: 15%;
   }
   .card {
     zoom: 0.6;
