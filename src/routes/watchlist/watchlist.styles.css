@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Arima&display=swap");
 
+.watchlist-page-title {
+  text-align: center;
+  font-family: "Arima", cursive;
+  font-size: 5rem;
+  color: var(--color2);
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
 .watchlist-page-empty-message{
     text-align: center;
     font-family: "Arima", cursive;
     font-size: 3rem;
-    color: aqua;
+    color:var(--color2);
+    text-shadow: 0px 0px 15px rgb(0, 0, 0);
   }
 
-  .watchlist-page-title {
-    text-align: center;
-    font-family: "Arima", cursive;
-    font-size: 5rem;
-    color: aqua;
-  }
   
   .watchlist-page-card-container {
     width: 60vw;

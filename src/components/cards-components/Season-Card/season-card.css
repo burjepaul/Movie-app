@@ -2,7 +2,7 @@
     position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #434bc0;
+  background-color: var(--color1);
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px 0px;
@@ -18,13 +18,15 @@
 
 .season-episode-number {
   text-align: center;
-  color: aqua;
+  color: var(--color2);
   margin-top: -1rem;
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
 }
 
 .season-title {
-  color: aqua;
+  color: var(--color2);
   text-align: center;
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
 }
 
 .season-image {
@@ -34,7 +36,7 @@
 .season-overview {
   position: absolute;
   font-size: smaller;
-  color: aqua;
+  color: var(--color2);
   font-weight: 500;
   background-color: hsl(0, 0%, 0%, 0.5);
   bottom: 15%;

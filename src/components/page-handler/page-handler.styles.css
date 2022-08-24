@@ -8,7 +8,7 @@
 }
 
 .arrow{
-    color: aqua;
+    color: var(--color2);
     font-weight: bold;
     font-size: x-large;
     cursor:pointer;
@@ -19,7 +19,7 @@
 }
 
 .value{
-    color: aqua;
+    color: var(--color2);
     border-radius: 5px;
     padding: 0.4rem 1.4rem;
     font-family: 'Noto Sans JP', sans-serif;

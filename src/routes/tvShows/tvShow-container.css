@@ -4,7 +4,7 @@
   text-align: center;
   font-family: "Arima", cursive;
   font-size: 5rem;
-  color: aqua;
+  color: var(--color2);
 }
 
 .tvShow-page-title-card-container {

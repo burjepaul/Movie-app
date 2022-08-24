@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #434bc0;
+  background-color: var(--color1);
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px 0px;
@@ -16,8 +16,9 @@
 }
 
 .tvShow-card-title {
-  color: aqua;
+  color: var(--color2);
   text-align: center;
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
 }
 
 .tvShow-card-footer {
@@ -38,7 +39,7 @@
 .tvShow-card-notes-container {
   padding-top: 0.3rem;
   font-size: smaller;
-  color: aqua;
+  color: var(--color2);
   font-family: "Noto Sans JP", sans-serif;
 }
 

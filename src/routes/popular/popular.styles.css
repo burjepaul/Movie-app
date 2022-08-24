@@ -4,7 +4,8 @@
   text-align: center;
   font-family: "Arima", cursive;
   font-size: 5rem;
-  color: aqua;
+  color: var(--color2);
+  text-shadow: 0px 0px 15px rgb(0, 0, 0);
 }
 
 .popular-page-card-container {

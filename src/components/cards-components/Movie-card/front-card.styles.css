@@ -3,7 +3,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: #434bc0;
+  background-color: var(--color1);
   border: 1px solid grey;
   border-radius: 5px;
   padding: 5px 0px;
@@ -18,7 +18,7 @@
 }
 
 .movie-title {
-  color: aqua;
+  color: var(--color2);
   text-align: center;
 }
 
@@ -40,12 +40,11 @@
 .notes-container {
   padding-top: 0.3rem;
   font-size: smaller;
-  color: aqua;
+  color: var(--color2);
   font-family: "Noto Sans JP", sans-serif;
 }
 
 .release-date {
-  color: #eeff00;
   font-family: "Noto Sans JP", sans-serif;
 }
 
@@ -54,6 +53,7 @@
   position: absolute;
   height: auto;
   width: 40px;
+  
 }
 
 @media (max-width: 500px) {
