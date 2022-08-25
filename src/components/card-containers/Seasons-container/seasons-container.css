@@ -29,6 +29,7 @@
   margin: 4rem 0 1rem 1rem;
   fill:var(--color2);
   transition: transform 0.25s ease-out;
+  filter: drop-shadow(5px 5px 5px hsl(0deg 0% 0% / 0.5));
 }
 .seasons-container-arrow-logo:hover{
   cursor: pointer;
