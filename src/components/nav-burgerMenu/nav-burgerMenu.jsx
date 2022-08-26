@@ -1,12 +1,11 @@
 import React from "react";
-import "./nav-burgerMenu.css"
+import "./nav-burgerMenu.css";
 
-
-const handleNavigation = (event) =>{
-    event.currentTarget.classList.toggle('change');
-  }
-
-export default function BurgerMenu() {
+export default function BurgerMenu({ setMobileNav, mobileNav }) {
+  const handleNavigation = (event) => {
+    event.currentTarget.classList.toggle("change");
+    setMobileNav(!mobileNav);
+  };
   return (
     <div className="menu-bars" id="menu-bars" onClick={handleNavigation}>
       <div className="bar1"></div>
