@@ -30,6 +30,26 @@
   text-decoration: none;
   font-family: "Noto Sans JP", sans-serif;
   text-shadow: 0px 0px 15px rgb(0, 0, 0);
+  border-right: 2px solid var(--color2);
+  transition: 0.6s;
+}
+
+.nav-link:hover {
+  background-color: var(--color1);
+}
+
+.nav-link:focus {
+  background-color: var(--color1);
+  font-size: larger;
+}
+
+.nav-link:first-child{
+  border-radius: 10px 0 0 10px;
+}
+
+.nav-link:last-child {
+  border-radius: 0 10px 10px 0;
+  border-right: none;
 }
 
 .main-logo {
@@ -43,36 +63,39 @@
     width: 30px;
   }
 
-  
   .link-container {
     width: 40px;
     height: 25px;
     font-size: smaller;
-    margin-top:23%;
+    margin-top: 23%;
     width: 100%;
   }
-  
-  .links{
+
+  .links {
     border-radius: 5px;
     background: var(--color1);
     opacity: 80%;
     margin-right: -15px;
   }
-  
-  .nav-link{
+
+  .nav-link {
     display: block;
+    border-right: none;
     border-bottom: 2px solid var(--color2);
     text-align: center;
   }
 
-  .nav-link:last-child{
+  .nav-link:first-child{
+    border-radius: 0px;
+  }
+
+  .nav-link:last-child {
     border-bottom: none;
   }
-  
+
   .deactive {
     display: none;
   }
-
 
   .main-logo {
     height: 15px;

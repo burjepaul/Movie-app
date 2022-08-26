@@ -38,7 +38,7 @@
   font-size: smaller;
   color: var(--color2);
   font-weight: 500;
-  background-color: hsl(0, 0%, 0%, 0.5);
+  text-shadow: 0 0 15px var(--color1), 0 0 15px var(--color1);
   bottom: 15%;
   padding: 1px;
 }
