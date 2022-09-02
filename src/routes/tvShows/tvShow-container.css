@@ -17,6 +17,13 @@
   padding-bottom: 3rem ;
 }
 
+.empty-message-tv-show{
+  text-align: center;
+  font-family: "Arima", cursive;
+  font-size: 3rem;
+  color: var(--color2);
+}
+
 @media (max-width: 1500px) {
   .tvShow-page-title-card-container {
     width: 40vw;

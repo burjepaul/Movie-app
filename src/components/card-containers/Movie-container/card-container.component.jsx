@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 
 import Card from "../../cards-components/Movie-card/card.component";
 
-import { API_KEY } from "../../../config";
+import { API_KEY,FETCH_TIME_REDUCER } from "../../../config";
 
 import "./card-container.css";
 import { fetchDataAsync } from "../../../helpers/functions";
@@ -11,15 +11,21 @@ const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetchDataAsync(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchField}`
-      );
-      setPopularMovies(
-        result.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
-      );
-    };
-    fetchData();
+    const fetchReducer = setTimeout(() => {
+      const fetchData = async () => {
+        const result = await fetchDataAsync(
+          `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchField}`
+        );
+        setPopularMovies(
+          result.results.slice(0, 6).sort((a, b) => b.popularity - a.popularity)
+        );
+      };
+      fetchData();
+    }, FETCH_TIME_REDUCER);
+
+    return ()=> {
+      clearTimeout(fetchReducer)
+    }
   }, [searchField]);
 
   if (popularMovies.length !== 0) {
