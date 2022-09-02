@@ -5,7 +5,7 @@
   .spinner svg {
     height: 6rem;
     width: 6rem;
-    fill: #f38e82;
+    fill: var(--color1);
     animation: rotate 2s infinite linear;
   }
   

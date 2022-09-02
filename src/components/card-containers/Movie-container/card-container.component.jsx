@@ -2,10 +2,15 @@ import { React, useState, useEffect } from "react";
 
 import Card from "../../cards-components/Movie-card/card.component";
 
-import { API_KEY,FETCH_TIME_REDUCER } from "../../../config";
+import {
+  API_KEY,
+  FETCH_TIME_REDUCER,
+  DEFAULT_SEARCH_VALUE,
+} from "../../../config";
 
 import "./card-container.css";
 import { fetchDataAsync } from "../../../helpers/functions";
+import Spinner from "../../spinner/spinner";
 
 const CardContainer = ({ searchField }) => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -23,10 +28,12 @@ const CardContainer = ({ searchField }) => {
       fetchData();
     }, FETCH_TIME_REDUCER);
 
-    return ()=> {
-      clearTimeout(fetchReducer)
-    }
+    return () => {
+      clearTimeout(fetchReducer);
+    };
   }, [searchField]);
+
+  console.log(searchField);
 
   if (popularMovies.length !== 0) {
     return (
@@ -36,6 +43,10 @@ const CardContainer = ({ searchField }) => {
         ))}
       </div>
     );
+  } else if (
+    searchField === DEFAULT_SEARCH_VALUE
+  ) {
+    return <Spinner />;
   } else
     return (
       <h1 className="empty-message">No movie with title "{searchField}"</h1>

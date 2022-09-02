@@ -10,6 +10,7 @@ import {
 } from "../../config";
 
 import "./tvShow-container.css";
+import Spinner from "../../components/spinner/spinner";
 
 export default function TvShow() {
   const [tvShows, setTvShows] = useState([]);
@@ -59,11 +60,20 @@ export default function TvShow() {
         </div>
       </div>
     );
+  } else if (searchShows === DEFAULT_SEARCH_VALUE) {
+    return (
+      <>
+        <h1 className="tvShow-page-title">Tv Shows</h1>
+        <Spinner />
+      </>
+    );
   } else {
     return (
       <>
         <h1 className="tvShow-page-title">Tv Shows</h1>
-        <h1 className="empty-message-tv-show">No Tv Show with title "{searchShows}"</h1>
+        <h1 className="empty-message-tv-show">
+          No Tv Show with title "{searchShows}"
+        </h1>
       </>
     );
   }
